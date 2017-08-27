@@ -109,7 +109,16 @@ class BackblazeAdapter extends AbstractAdapter {
      */
     public function rename($path, $newpath)
     {
-        return false;
+        $fileContents = $this->read($path)['contents'];
+
+        $file = $this->getClient()->upload([
+            'BucketName' => $this->bucketName,
+            'FileName' => $newpath,
+            'Body' => $fileContents
+        ]);
+        $fileInfo = $this->getFileInfo($file);
+
+        $this->delete($path);
     }
 
     /**
