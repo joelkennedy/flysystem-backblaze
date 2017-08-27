@@ -16,7 +16,7 @@
     "require": {
         "php": ">=5.5.0",
         "league/flysystem": "~1.0",
-        "joelkennedy/b2-sdk-php" : "dev-master",
+        "joelkennedy/b2-sdk-php" : "*",
         "mikey179/vfsStream" : "*"
     },
     "require-dev": {
@@ -40,11 +40,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/joelkennedy/b2-sdk-php"
     }
-  ]
 }
